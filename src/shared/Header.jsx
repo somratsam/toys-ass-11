@@ -1,5 +1,5 @@
 
-import { Navbar, Nav,  Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../providers/AuthProvider';
 import { Link, useLocation } from 'react-router-dom';
@@ -9,13 +9,13 @@ const Header = () => {
 
     const { user, logout } = useContext(AuthContext);
     const location = useLocation();
-  
+
     const handleLogout = () => {
-      logout()
-      .then()
-      .catch(error => console.log(error))
+        logout()
+            .then()
+            .catch(error => console.log(error))
     };
-  
+
 
 
     return (
@@ -36,27 +36,37 @@ const Header = () => {
                     <Nav className="mx-auto">
                         <Nav.Link href="#">Home</Nav.Link>
                         <Nav.Link href="#">All Toys</Nav.Link>
-                        <Nav.Link href="#">My Toys</Nav.Link>
-                        <Nav.Link href="#">Add A Toy</Nav.Link>
+                        {user && <Nav.Link href="#">My Toys</Nav.Link>}
+                        {user && <Nav.Link href="#">Add A Toy</Nav.Link>}
                         <Nav.Link href="#">Blogs</Nav.Link>
                     </Nav>
                     <Nav>
-            {user && (
-              <Nav.Item className="fw-bold text-dark">
-                <FaUserCircle style={{ fontSize: '2rem',
-            paddingRight: '10px' }} /> {user.name} 
-              </Nav.Item>
-            )}
-            {user ? (
-              <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }} onClick={handleLogout}>
-                Logout
-              </Button>
-            ) : (
-              <Link to="/login">
-                <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }}>Login</Button>
-              </Link>
-            )}
-          </Nav>
+                        {user && (
+                             <OverlayTrigger
+                             placement="bottom"
+                             overlay={<Tooltip id="tooltip-user">{user.name}</Tooltip>}
+                           >
+                             <Nav.Item>
+                               <FaUserCircle
+                                 style={{
+                                   fontSize: '2rem',
+                                   paddingRight: '10px',
+                                   cursor: 'pointer',
+                                 }}
+                               />
+                             </Nav.Item>
+                           </OverlayTrigger>
+                        )}
+                        {user ? (
+                            <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }} onClick={handleLogout}>
+                                Logout
+                            </Button>
+                        ) : (
+                            <Link to="/login">
+                                <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }}>Login</Button>
+                            </Link>
+                        )}
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
