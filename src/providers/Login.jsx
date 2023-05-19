@@ -9,7 +9,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from './AuthProvider';
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, setUserAndName, setUserAndPhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log('log in page location', location);
@@ -28,7 +28,9 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        const name = loggedUser.displayName;
+        const photoURL = loggedUser.photoURL; // Access photoURL from the loggedUser object
+        setUserAndName(loggedUser, name, photoURL); // Set user, name, and photoURL in the AuthContext
         setErrorMessage('');
         navigate(from, { replace: true });
       })
@@ -50,7 +52,7 @@ const Login = () => {
     <Container className="mt-5">
       <Row className="justify-content-center align-items-center">
         <Col xs={12} md={6} className='card shadow border-0'>
-        <h3 className='text-center fw-bold'>Login</h3>
+          <h3 className='text-center'>Login</h3>
           <Form onSubmit={handleLogin}>
             {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
             <Form.Group className="mb-3" controlId="formBasicEmail">
