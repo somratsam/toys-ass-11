@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
           <img src="https://i.ibb.co/xhM0hzM/0-0-removebg-preview.png" alt="" style={{ height: '40px', width: '40px' }} />
           <span className="fw-bold" style={{ color: '#FF5722' }}>
             Wonder Toy
@@ -27,11 +27,11 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">All Toys</Nav.Link>
-            {user && <Nav.Link href="#">My Toys</Nav.Link>}
-            {user && <Nav.Link href="#">Add A Toy</Nav.Link>}
-            <Nav.Link href="#">Blogs</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/all-toys">All Toys</Nav.Link>
+            {user && <Nav.Link as={Link} to="/my-toys">My Toys</Nav.Link>}
+            {user && <Nav.Link as={Link} to="/add-a-toy">Add Toy</Nav.Link>}
+            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
           </Nav>
           <Nav>
             {user && (
