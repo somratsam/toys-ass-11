@@ -1,4 +1,4 @@
-[ 
+[
   {
     "id": "1",
     "name": "Marvel",
@@ -9,7 +9,11 @@
           {
             "image": "https://i.ibb.co/nrTPs12/iron.jpg",
             "price": 29.99,
-            "rating": 4.5
+            "rating": 4.5,
+            "sellerName": "Toy Universe",
+            "sellerEmail": "toyuniverse@gmail.com",
+            "quantity": 10,
+            "description": "Iron Man action figure with light-up features and articulated joints. Suitable for ages 5 and up."
           }
         ]
       },
@@ -19,7 +23,11 @@
           {
             "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
             "price": 24.99,
-            "rating": 4.3
+            "rating": 4.3,
+            "sellerName": "Super Toys",
+            "sellerEmail": "supertoys@gmail.com",
+            "quantity": 5,
+            "description": "Spider-Man action figure with web-slinging action. Includes extra web accessories. Recommended for ages 4 and above."
           }
         ]
       },
@@ -29,7 +37,11 @@
           {
             "image": "https://i.ibb.co/WnhLNh7/hulk.jpg",
             "price": 24.99,
-            "rating": 4.3
+            "rating": 4.3,
+            "sellerName": "Mighty Collectibles",
+            "sellerEmail": "mighty@gmail.com",
+            "quantity": 8,
+            "description": "Hulk action figure with smashing action. Features Hulk's iconic green appearance and incredible strength. Suitable for ages 3 and up."
           }
         ]
       }
@@ -39,18 +51,31 @@
         "name": "Spider-Man",
         "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
         "price": 24.99,
-        "rating": 4.3
+        "rating": 4.3,
+        "sellerName": "Super Toys",
+        "sellerEmail": "supertoys@gmail.com",
+        "quantity": 5,
+        "description": "Spider-Man action figure with web-slinging action. Includes extra web accessories. Recommended for ages 4 and above."
       },
       {
         "name": "Iron Man",
         "image": "https://i.ibb.co/nrTPs12/iron.jpg",
         "price": 29.99,
-        "rating": 4.5
+        "rating": 4.5,
+        "sellerName": "Toy Universe",
+        "sellerEmail": "supertoys@gmail.com",
+        "quantity": 10,
+        "description": "Iron Man action figure with light-up features and articulated joints. Suitable for ages 5 and up."
       },
       {
+        "name": "Captain America",
         "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
         "price": 27.99,
-        "rating": 4.4
+        "rating": 4.4,
+        "sellerName": "Awesome Toys",
+        "sellerEmail": "awesometoy@gmail.com",
+        "quantity": 12,
+        "description": "Captain America action figure with shield-throwing action. Includes Captain America's iconic shield. Suitable for ages 6 and up."
       }
     ],
     "newReleases": [
@@ -58,19 +83,31 @@
         "name": "Black Widow",
         "image": "https://i.ibb.co/6XW1VSh/black.webp",
         "price": 26.99,
-        "rating": 4.4
+        "rating": 4.4,
+        "sellerName": "Action Figures Galore",
+        "sellerEmail": "actiongalore@gmail.com",
+        "quantity": 15,
+        "description": "Black Widow action figure based on the movie character. Features Black Widow's sleek black suit and combat accessories. Suitable for ages 8 and up."
       },
       {
         "name": "Captain Marvel",
         "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
         "price": 32.99,
-        "rating": 4.2
+        "rating": 4.2,
+        "sellerName": "Hero Toys",
+        "sellerEmail": "herotoys@gmail.com",
+        "quantity": 7,
+        "description": "Captain Marvel action figure with cosmic powers. Includes Captain Marvel's energy-blasting effects. Recommended for ages 4 and above."
       },
       {
         "name": "Star scream",
         "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
         "price": 32.99,
-        "rating": 4.2
+        "rating": 4.2,
+        "sellerName": "Robo Toys",
+        "sellerEmail": "Robotoys@gmail.com",
+        "quantity": 3,
+        "description": "Star scream transformer robot figure with transforming action. Features Star scream's iconic jet mode and blaster weapons. Suitable for ages 10 and up."
       }
     ]
   },
@@ -84,7 +121,11 @@
           {
             "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
             "price": 27.99,
-            "rating": 4.4
+            "rating": 4.4,
+            "sellerName": "Awesome Toys",
+            "sellerEmail": "awesometoy@gmail.com",
+            "quantity": 12,
+            "description": "Captain America action figure with shield-throwing action. Includes Captain America's iconic shield. Suitable for ages 6 and up."
           }
         ]
       },
@@ -94,7 +135,11 @@
           {
             "image": "https://i.ibb.co/ryHt4wV/thortoys.webp",
             "price": 31.99,
-            "rating": 4.2
+            "rating": 4.2,
+            "sellerName": "Mighty Collectibles",
+            "sellerEmail": "mighty@gmail.com",
+            "quantity": 8,
+            "description": "Thor action figure with lightning effects. Includes Thor's mighty hammer, Mjolnir. Recommended for ages 5 and above."
           }
         ]
       },
@@ -104,7 +149,11 @@
           {
             "image": "https://i.ibb.co/gP2gT3N/blackpan.jpg",
             "price": 31.99,
-            "rating": 4.2
+            "rating": 4.2,
+            "sellerName": "Superhero Toys",
+            "sellerEmail": "superherotoys@gmail.com",
+            "quantity": 6,
+            "description": "Black Panther action figure with vibranium-powered action. Features Black Panther's sleek black suit and combat accessories. Suitable for ages 7 and up."
           }
         ]
       }
@@ -114,18 +163,31 @@
         "name": "Spider-Man",
         "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
         "price": 24.99,
-        "rating": 4.3
+        "rating": 4.3,
+        "sellerName": "Super Toys",
+        "sellerEmail": "supertoys@gmail.com",
+        "quantity": 5,
+        "description": "Spider-Man action figure with web-slinging action. Includes extra web accessories. Recommended for ages 4 and above."
       },
       {
         "name": "Iron Man",
         "image": "https://i.ibb.co/nrTPs12/iron.jpg",
         "price": 29.99,
-        "rating": 4.5
+        "rating": 4.5,
+        "sellerName": "Toy Universe",
+        "sellerEmail": "toyuniverse@gmail.com",
+        "quantity": 10,
+        "description": "Iron Man action figure with light-up features and articulated joints. Suitable for ages 5 and up."
       },
       {
+        "name": "Captain America",
         "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
         "price": 27.99,
-        "rating": 4.4
+        "rating": 4.4,
+        "sellerName": "Awesome Toys",
+        "sellerEmail": "awesometoy@gmail.com",
+        "quantity": 12,
+        "description": "Captain America action figure with shield-throwing action. Includes Captain America's iconic shield. Suitable for ages 6 and up."
       }
     ],
     "newReleases": [
@@ -133,19 +195,31 @@
         "name": "Black Widow",
         "image": "https://i.ibb.co/6XW1VSh/black.webp",
         "price": 26.99,
-        "rating": 4.4
+        "rating": 4.4,
+        "sellerName": "Action Figures Galore",
+        "sellerEmail": "actiongalore@gmail.com",
+        "quantity": 15,
+        "description": "Black Widow action figure based on the movie character. Features Black Widow's sleek black suit and combat accessories. Suitable for ages 8 and up."
       },
       {
         "name": "Captain Marvel",
         "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
         "price": 32.99,
-        "rating": 4.2
+        "rating": 4.2,
+        "sellerName": "Hero Toys",
+        "sellerEmail": "herotoys@gmail.com",
+        "quantity": 7,
+        "description": "Captain Marvel action figure with cosmic powers. Includes Captain Marvel's energy-blasting effects. Recommended for ages 4 and above."
       },
       {
         "name": "Star scream",
         "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
         "price": 32.99,
-        "rating": 4.2
+        "rating": 4.2,
+        "sellerName": "Robo Toys",
+        "sellerEmail": "Robotoys@gmail.com",
+        "quantity": 3,
+        "description": "Star scream transformer robot figure with transforming action. Features Star scream's iconic jet mode and blaster weapons. Suitable for ages 10 and up."
       }
     ]
   },
@@ -159,7 +233,11 @@
           {
             "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
             "price": 36.99,
-            "rating": 4.3
+            "rating": 4.6,
+            "sellerName": "Robo Toys",
+            "sellerEmail": "Robotoys@gmail.com",
+            "quantity": 7,
+            "description": "Optimus Prime transformer robot figure with transforming action. Features Optimus Prime's iconic truck mode and blaster weapons. Suitable for ages 8 and up."
           }
         ]
       },
@@ -167,61 +245,95 @@
         "name": "Bumblebee",
         "toys": [
           {
-            "image": "https://i.ibb.co/rHkG0P5/Bumblebee.jpg",
-            "price": 29.99,
-            "rating": 4.5
+            "image": "https://i.ibb.co/7nVskz1/7101-F0-r-KTL.jpg",
+            "price": 28.99,
+            "rating": 4.3,
+            "sellerName": "Toy Universe",
+            "sellerEmail": "toyuniverse@gmail.com",
+            "quantity": 5,
+            "description": "Bumblebee transformer robot figure with transforming action. Features Bumblebee's iconic car mode and blaster weapons. Suitable for ages 6 and up."
           }
         ]
       },
       {
-        "name": "Shockwave",
+        "name": "Megatron",
         "toys": [
           {
-            "image": "https://i.ibb.co/hMhpbBr/Shockwave.jpg",
-            "price": 29.99,
-            "rating": 4.5
+            "image": "https://i.ibb.co/wr0XwGJ/919-1tl-Od-AL.jpg",
+            "price": 34.99,
+            "rating": 4.4,
+            "sellerName": "Mighty Collectibles",
+            "sellerEmail": "mighty@gmail.com",
+            "quantity": 8,
+            "description": "Megatron transformer robot figure with transforming action. Features Megatron's iconic tank mode and fusion cannon. Suitable for ages 10 and up."
           }
         ]
       }
     ],
     "bestSellers": [
       {
-        "name": "Spider-Man",
-        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
-        "price": 24.99,
-        "rating": 4.3
+        "name": "Optimus Prime",
+        "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
+        "price": 36.99,
+        "rating": 4.6,
+        "sellerName": "Robo Toys",
+        "sellerEmail": "Robotoys@gmail.com",
+        "quantity": 7,
+        "description": "Optimus Prime transformer robot figure with transforming action. Features Optimus Prime's iconic truck mode and blaster weapons. Suitable for ages 8 and up."
       },
       {
-        "name": "Iron Man",
-        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
-        "price": 29.99,
-        "rating": 4.5
+        "name": "Bumblebee",
+        "image": "https://i.ibb.co/7nVskz1/7101-F0-r-KTL.jpg",
+        "price": 28.99,
+        "rating": 4.3,
+        "sellerName": "Toy Universe",
+        "sellerEmail": "toyuniverse@gmail.com",
+        "quantity": 5,
+        "description": "Bumblebee transformer robot figure with transforming action. Features Bumblebee's iconic car mode and blaster weapons. Suitable for ages 6 and up."
       },
       {
-        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
-        "price": 27.99,
-        "rating": 4.4
+        "name": "Megatron",
+        "image": "https://i.ibb.co/wr0XwGJ/919-1tl-Od-AL.jpg",
+        "price": 34.99,
+        "rating": 4.4,
+        "sellerName": "Mighty Collectibles",
+        "sellerEmail": "mighty@gmail.com",
+        "quantity": 8,
+        "description": "Megatron transformer robot figure with transforming action. Features Megatron's iconic tank mode and fusion cannon. Suitable for ages 10 and up."
       }
     ],
     "newReleases": [
       {
-        "name": "Black Widow",
-        "image": "https://i.ibb.co/6XW1VSh/black.webp",
-        "price": 26.99,
-        "rating": 4.4
+        "name": "Soundwave",
+        "image": "https://i.ibb.co/nDTKM3v/soundwave.jpg",
+        "price": 32.99,
+        "rating": 4.2,
+        "sellerName": "Action Figures Galore",
+        "sellerEmail": "actiongalore@gmail.com",
+        "quantity": 6,
+        "description": "Soundwave transformer robot figure with transforming action. Features Soundwave's iconic cassette player mode and sonic blaster. Suitable for ages 8 and up."
       },
       {
-        "name": "Captain Marvel",
-        "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
-        "price": 32.99,
-        "rating": 4.2
+        "name": "Starscream",
+        "image": "https://i.ibb.co/sPtGQ1B/starscream.jpg",
+        "price": 31.99,
+        "rating": 4.1,
+        "sellerName": "Super Toys",
+        "sellerEmail": "supertoys@gmail.com",
+        "quantity": 4,
+        "description": "Starscream transformer robot figure with transforming action. Features Starscream's iconic jet mode and null-ray cannons. Recommended for ages 7 and above."
       },
       {
-        "name": "Star scream",
-        "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
-        "price": 32.99,
-        "rating": 4.2
+        "name": "Grimlock",
+        "image": "https://i.ibb.co/W0QLW20/grimlock.jpg",
+        "price": 35.99,
+        "rating": 4.5,
+        "sellerName": "Hero Toys",
+        "sellerEmail": "herotoys@gmail.com",
+        "quantity": 3,
+        "description": "Grimlock transformer robot figure with transforming action. Features Grimlock's iconic T-Rex mode and Energo-sword. Suitable for ages 10 and up."
       }
     ]
   }
 ]
+
