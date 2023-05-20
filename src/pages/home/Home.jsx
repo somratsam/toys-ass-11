@@ -1,6 +1,6 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import ShopCategory from "./shopbycetegory/ShopCategory";
-import Gallery from "./Gallery";
+
 
 const Home = () => {
     return (
@@ -25,7 +25,7 @@ const Home = () => {
                     </div>
                 </Col>
             </Row>
-<Gallery></Gallery>
+
             <ShopCategory></ShopCategory>
         </Container>
     );

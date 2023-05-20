@@ -1,151 +1,227 @@
-{
-  "categories": [
-    {
-      "id": "1",
-      "name": "Marvel",
-      "subcategories": [
-        {
-          "name": "Iron Man",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/nrTPs12/iron.jpg",
-              "price": 29.99,
-              "rating": 4.5
-            }
-          ]
-        },
-        {
-          "name": "Spider-Man",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
-              "price": 24.99,
-              "rating": 4.3
-            }
-          ]
-        },
-        {
-          "name": "Hulk",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/WnhLNh7/hulk.jpg",
-              "price": 24.99,
-              "rating": 4.3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Avengers",
-      "subcategories": [
-        {
-          "name": "Captain America",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
-              "price": 27.99,
-              "rating": 4.4
-            }
-          ]
-        },
-        {
-          "name": "Thor",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/ryHt4wV/thortoys.webp",
-              "price": 31.99,
-              "rating": 4.2
-            }
-          ]
-        },
-        {
-          "name": "Black Panther",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/gP2gT3N/blackpan.jpg",
-              "price": 31.99,
-              "rating": 4.2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Transformers",
-      "subcategories": [
-        {
-          "name": "Optimus Prime",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
-              "price": 36.99,
-              "rating": 4.3
-            }
-          ]
-        },
-        {
-          "name": "Bumblebee",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/rHkG0P5/Bumblebee.jpg",
-              "price": 29.99,
-              "rating": 4.5
-            }
-          ]
-        },
-        {
-          "name": "Shockwave",
-          "toys": [
-            {
-              "image": "https://i.ibb.co/hMhpbBr/Shockwave.jpg",
-              "price": 29.99,
-              "rating": 4.5
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "bestSellers": [
-    {
-      "name": "Spider-Man",
-      "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
-      "price": 24.99,
-      "rating": 4.3
-    },
-    {
-      "name": "Iron Man",
-      "image": "https://i.ibb.co/nrTPs12/iron.jpg",
-      "price": 29.99,
-      "rating": 4.5
-    },
-    {
-      "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
-      "price": 27.99,
-      "rating": 4.4
-    }
-  ],
-  "newReleases": [
-    {
-      "name": "Black Widow",
-      "image": "https://i.ibb.co/6XW1VSh/black.webp",
-      "price": 26.99,
-      "rating": 4.4
-    },
-    {
-      "name": "Captain Marvel",
-      "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
-      "price": 32.99,
-      "rating": 4.2
-    },
-    {
-      "name": "Star scream",
-      "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
-      "price": 32.99,
-      "rating": 4.2
-    }
-  ]
-}
+[ 
+  {
+    "id": "1",
+    "name": "Marvel",
+    "subcategories": [
+      {
+        "name": "Iron Man",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+            "price": 29.99,
+            "rating": 4.5
+          }
+        ]
+      },
+      {
+        "name": "Spider-Man",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+            "price": 24.99,
+            "rating": 4.3
+          }
+        ]
+      },
+      {
+        "name": "Hulk",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/WnhLNh7/hulk.jpg",
+            "price": 24.99,
+            "rating": 4.3
+          }
+        ]
+      }
+    ],
+    "bestSellers": [
+      {
+        "name": "Spider-Man",
+        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+        "price": 24.99,
+        "rating": 4.3
+      },
+      {
+        "name": "Iron Man",
+        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+        "price": 29.99,
+        "rating": 4.5
+      },
+      {
+        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+        "price": 27.99,
+        "rating": 4.4
+      }
+    ],
+    "newReleases": [
+      {
+        "name": "Black Widow",
+        "image": "https://i.ibb.co/6XW1VSh/black.webp",
+        "price": 26.99,
+        "rating": 4.4
+      },
+      {
+        "name": "Captain Marvel",
+        "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      },
+      {
+        "name": "Star scream",
+        "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Avengers",
+    "subcategories": [
+      {
+        "name": "Captain America",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+            "price": 27.99,
+            "rating": 4.4
+          }
+        ]
+      },
+      {
+        "name": "Thor",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/ryHt4wV/thortoys.webp",
+            "price": 31.99,
+            "rating": 4.2
+          }
+        ]
+      },
+      {
+        "name": "Black Panther",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/gP2gT3N/blackpan.jpg",
+            "price": 31.99,
+            "rating": 4.2
+          }
+        ]
+      }
+    ],
+    "bestSellers": [
+      {
+        "name": "Spider-Man",
+        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+        "price": 24.99,
+        "rating": 4.3
+      },
+      {
+        "name": "Iron Man",
+        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+        "price": 29.99,
+        "rating": 4.5
+      },
+      {
+        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+        "price": 27.99,
+        "rating": 4.4
+      }
+    ],
+    "newReleases": [
+      {
+        "name": "Black Widow",
+        "image": "https://i.ibb.co/6XW1VSh/black.webp",
+        "price": 26.99,
+        "rating": 4.4
+      },
+      {
+        "name": "Captain Marvel",
+        "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      },
+      {
+        "name": "Star scream",
+        "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Transformers",
+    "subcategories": [
+      {
+        "name": "Optimus Prime",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
+            "price": 36.99,
+            "rating": 4.3
+          }
+        ]
+      },
+      {
+        "name": "Bumblebee",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/rHkG0P5/Bumblebee.jpg",
+            "price": 29.99,
+            "rating": 4.5
+          }
+        ]
+      },
+      {
+        "name": "Shockwave",
+        "toys": [
+          {
+            "image": "https://i.ibb.co/hMhpbBr/Shockwave.jpg",
+            "price": 29.99,
+            "rating": 4.5
+          }
+        ]
+      }
+    ],
+    "bestSellers": [
+      {
+        "name": "Spider-Man",
+        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+        "price": 24.99,
+        "rating": 4.3
+      },
+      {
+        "name": "Iron Man",
+        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+        "price": 29.99,
+        "rating": 4.5
+      },
+      {
+        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+        "price": 27.99,
+        "rating": 4.4
+      }
+    ],
+    "newReleases": [
+      {
+        "name": "Black Widow",
+        "image": "https://i.ibb.co/6XW1VSh/black.webp",
+        "price": 26.99,
+        "rating": 4.4
+      },
+      {
+        "name": "Captain Marvel",
+        "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      },
+      {
+        "name": "Star scream",
+        "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
+        "price": 32.99,
+        "rating": 4.2
+      }
+    ]
+  }
+]

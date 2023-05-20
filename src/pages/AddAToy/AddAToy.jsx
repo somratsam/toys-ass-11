@@ -1,47 +1,49 @@
-import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { Form, Button, Container } from 'react-bootstrap';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const AddAToy = () => {
-  const [toyData, setToyData] = useState({
-    pictureUrl: '',
-    name: '',
-    sellerName: '',
-    sellerEmail: '',
-    subCategory: '',
-    price: 0,
-    rating: 0,
-    availableQuantity: 0,
-    description: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setToyData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const { user } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform submission logic here
+
+    const form = e.target;
+    const toyData = {
+      pictureUrl: form.pictureUrl.value,
+      name: form.name.value,
+      sellerName: form.sellerName.value,
+      sellerEmail: form.sellerEmail.value,
+      subCategory: form.subCategory.value,
+      price: parseInt(form.price.value),
+      rating: parseInt(form.rating.value),
+      availableQuantity: parseInt(form.availableQuantity.value),
+      description: form.description.value,
+    };
+
     console.log(toyData);
+
+    fetch('http://localhost:5000/addToy', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(toyData),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
     // Reset the form
-    setToyData({
-      pictureUrl: '',
-      name: '',
-      sellerName: '',
-      sellerEmail: '',
-      subCategory: '',
-      price: 0,
-      rating: 0,
-      availableQuantity: 0,
-      description: '',
-    });
+    form.reset();
   };
 
   return (
-    <div>
+    <Container className="mx-auto w-50">
       <h1>Add A Toy</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="pictureUrl">
@@ -49,8 +51,6 @@ const AddAToy = () => {
           <Form.Control
             type="text"
             name="pictureUrl"
-            value={toyData.pictureUrl}
-            onChange={handleChange}
             required
           />
         </Form.Group>
@@ -60,63 +60,82 @@ const AddAToy = () => {
           <Form.Control
             type="text"
             name="name"
-            value={toyData.name}
-            onChange={handleChange}
             required
           />
         </Form.Group>
 
-        {/* Include other form fields based on the provided information */}
-        {/* Example: Seller Name */}
         <Form.Group controlId="sellerName">
           <Form.Label>Seller Name</Form.Label>
           <Form.Control
             type="text"
             name="sellerName"
-            value={toyData.sellerName}
-            onChange={handleChange}
+            defaultValue={user?.displayName}
           />
         </Form.Group>
 
-        {/* Example: Seller Email */}
         <Form.Group controlId="sellerEmail">
           <Form.Label>Seller Email</Form.Label>
           <Form.Control
             type="email"
             name="sellerEmail"
-            value={toyData.sellerEmail}
-            onChange={handleChange}
+            defaultValue={user?.email}
           />
         </Form.Group>
 
-        {/* Example: Sub-category */}
         <Form.Group controlId="subCategory">
           <Form.Label>Sub-category</Form.Label>
           <Form.Control
             as="select"
             name="subCategory"
-            value={toyData.subCategory}
-            onChange={handleChange}
             required
           >
             <option value="">Select Sub-category</option>
-            <option value="Math Toys">Math Toys</option>
-            <option value="Language Toys">Language Toys</option>
-            <option value="Science Toys">Science Toys</option>
+            <option value="Marvel">Marvel</option>
+            <option value="Avengers">Avengers</option>
+            <option value="Transformers">Transformers</option>
           </Form.Control>
         </Form.Group>
 
-        {/* Include other form fields based on the provided information */}
-        {/* Example: Price */}
-        {/* Example: Rating */}
-        {/* Example: Available Quantity */}
-        {/* Example: Detail Description */}
+        <Form.Group controlId="price">
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="number"
+            name="price"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group controlId="rating">
+          <Form.Label>Rating</Form.Label>
+          <Form.Control
+            type="number"
+            name="rating"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group controlId="availableQuantity">
+          <Form.Label>Available Quantity</Form.Label>
+          <Form.Control
+            type="number"
+            name="availableQuantity"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group controlId="description">
+          <Form.Label>Detail Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="description"
+          />
+        </Form.Group>
 
         <Button variant="primary" type="submit">
           Submit
         </Button>
       </Form>
-    </div>
+    </Container>
   );
 };
 
