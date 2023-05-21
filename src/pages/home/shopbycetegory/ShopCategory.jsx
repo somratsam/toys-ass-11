@@ -1,19 +1,16 @@
-
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import { Tab, Nav, Card, Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import BestSeller from '../BestSeller';
 import NewReleases from '../NewReleases';
+
 const ShopCategory = () => {
   const [activeTab, setActiveTab] = useState('1');
   const [categories, setCategories] = useState([]);
   const [bestSellerData, setBestSellerData] = useState([]);
   const [newReleasesData, setNewReleasesData] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [activeToy, setActiveToy] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -39,7 +36,8 @@ const ShopCategory = () => {
     console.log('Selected rating:', rating);
   };
 
-  const handleModal = () => {
+  const handleModal = (toy) => {
+    setActiveToy(toy);
     setShowModal(!showModal);
   };
 
@@ -51,15 +49,14 @@ const ShopCategory = () => {
           {categories.map((category) => (
             <Nav.Item key={category._id}>
               <Nav.Link
-  className={`fw-bold ${activeTab === category.id ? 'bg-warning' : ''}`}
-  eventKey={category.id}
-  style={{
-    color: activeTab === category.id ? '#ff6600' : '#000'
-  }}
->
-  {category.name}
-</Nav.Link>
-
+                className={`fw-bold ${activeTab === category.id ? 'bg-warning' : ''}`}
+                eventKey={category.id}
+                style={{
+                  color: activeTab === category.id ? '#ff6600' : '#000',
+                }}
+              >
+                {category.name}
+              </Nav.Link>
             </Nav.Item>
           ))}
         </Nav>
@@ -88,7 +85,9 @@ const ShopCategory = () => {
                                     <FaStar
                                       style={{ color: ratingIndex < toy.rating ? 'gold' : 'gray' }}
                                       key={ratingIndex}
-                                      className={ratingIndex < toy.rating ? 'star filled-star' : 'star empty-star'}
+                                      className={
+                                        ratingIndex < toy.rating ? 'star filled-star' : 'star empty-star'
+                                      }
                                       onClick={() => handleRatingChange(ratingIndex + 1)}
                                     />
                                   ))}
@@ -100,7 +99,7 @@ const ShopCategory = () => {
                                 variant="light"
                                 className="rounded-5 text-dark fw-bold"
                                 style={{ backgroundColor: '#FF5722' }}
-                                onClick={handleModal}
+                                onClick={() => handleModal(toy)}
                               >
                                 View Details
                               </Button>
@@ -119,43 +118,31 @@ const ShopCategory = () => {
       <BestSeller bestSellerData={bestSellerData} />
       <NewReleases newReleasesData={newReleasesData} />
 
-      <Modal className="w-100 h-100" show={showModal} onHide={handleModal}>
-  <Modal.Header closeButton>
-    <Modal.Title>Details</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    {categories.map((category) => {
-      if (category.id === activeTab) {
-        return category.subcategories.map((subcategory) => (
-          <div key={subcategory.name}>
-            <h4 className=" mt-4">{subcategory.name}</h4>
-            {subcategory.toys.map((toy, index) => (
-              <div key={index} className="d-flex justify-content-between">
-                <div className="w-25">
-                  <img className="w-100" src={toy.image} alt="" />
-                </div>
-                <div className="w-75">
-                  <h6>Toy {index + 1}</h6>
-                  <p>Price: ${toy.price}</p>
-                  {/* Add any other relevant data here */}
-                </div>
-              </div>
-            ))}
-          </div>
-        ));
-      }
-      return null;
-    })}
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="secondary" onClick={handleModal}>
-      Close
-    </Button>
-    <Button variant="primary">Save Changes</Button>
-  </Modal.Footer>
-</Modal>
-
-
+      <Modal className="w-100 " show={showModal} onHide={handleModal}>
+        <Modal.Header className='border-0' closeButton>
+        </Modal.Header>
+        <Modal.Body>
+  {activeToy && (
+    <div className=" card  p-2 border-0">
+      <div className=" text-center">
+      <h3 className=" my-3 fw-bold">{activeToy.name}</h3>
+        <img className="w-50  h-100" src={activeToy.image} alt="" />
+      </div>
+      <div>
+        
+        
+        <p> <strong>Seller Name:</strong> {activeToy.sellerName}</p>
+        <p> <strong>Seller Email:</strong> {activeToy.sellerEmail}</p>
+        <p> <strong>Price: $</strong> {activeToy.price}</p>
+        <p> <strong>Rating:</strong> {activeToy.rating}</p>
+        <p> <strong>Quantity:</strong> {activeToy.quantity}</p>
+        <p> <strong>Description:</strong> {activeToy.description}</p>
+        {/* Add any other relevant data here */}
+      </div>
+    </div>
+  )}
+</Modal.Body>
+      </Modal>
     </Container>
   );
 };

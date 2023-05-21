@@ -7,6 +7,7 @@
         "name": "Iron Man",
         "toys": [
           {
+            "name": "Iron Man",
             "image": "https://i.ibb.co/nrTPs12/iron.jpg",
             "price": 29.99,
             "rating": 4.5,
@@ -21,6 +22,7 @@
         "name": "Spider-Man",
         "toys": [
           {
+            "name": "Spider-Man",
             "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
             "price": 24.99,
             "rating": 4.3,
@@ -35,6 +37,7 @@
         "name": "Hulk",
         "toys": [
           {
+            "name": "Hulk",
             "image": "https://i.ibb.co/WnhLNh7/hulk.jpg",
             "price": 24.99,
             "rating": 4.3,
@@ -119,6 +122,7 @@
         "name": "Captain America",
         "toys": [
           {
+            "name": "Captain America",
             "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
             "price": 27.99,
             "rating": 4.4,
@@ -133,6 +137,7 @@
         "name": "Thor",
         "toys": [
           {
+            "name": "Thor",
             "image": "https://i.ibb.co/ryHt4wV/thortoys.webp",
             "price": 31.99,
             "rating": 4.2,
@@ -147,6 +152,7 @@
         "name": "Black Panther",
         "toys": [
           {
+            "name": "Black Panther",
             "image": "https://i.ibb.co/gP2gT3N/blackpan.jpg",
             "price": 31.99,
             "rating": 4.2,
@@ -231,6 +237,7 @@
         "name": "Optimus Prime",
         "toys": [
           {
+            "name": "Optimus Prime",
             "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
             "price": 36.99,
             "rating": 4.6,
@@ -245,6 +252,7 @@
         "name": "Bumblebee",
         "toys": [
           {
+            "name": "Bumblebee",
             "image": "https://i.ibb.co/7nVskz1/7101-F0-r-KTL.jpg",
             "price": 28.99,
             "rating": 4.3,
@@ -259,6 +267,7 @@
         "name": "Megatron",
         "toys": [
           {
+            "name": "Megatron",
             "image": "https://i.ibb.co/wr0XwGJ/919-1tl-Od-AL.jpg",
             "price": 34.99,
             "rating": 4.4,
