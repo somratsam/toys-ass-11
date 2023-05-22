@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -9,13 +11,21 @@ const AddAToy = () => {
     e.preventDefault();
 
     const form = e.target;
+    const price = parseFloat(form.price.value); // Parse the price as a float
+
+    // Format the price as US dollars
+    const formattedPrice = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(price);
+
     const toyData = {
       pictureUrl: form.pictureUrl.value,
       name: form.name.value,
       sellerName: form.sellerName.value,
       sellerEmail: form.sellerEmail.value,
       subCategory: form.subCategory.value,
-      price: parseInt(form.price.value),
+      price: formattedPrice, // Use the formatted price
       rating: parseInt(form.rating.value),
       availableQuantity: parseInt(form.availableQuantity.value),
       description: form.description.value,
@@ -33,6 +43,12 @@ const AddAToy = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        if (result.insertedId) {
+          Swal.fire({
+            icon: 'success',
+            text: 'Toy added successfully',
+          });
+        }
       })
       .catch((error) => {
         console.error('Error:', error);
