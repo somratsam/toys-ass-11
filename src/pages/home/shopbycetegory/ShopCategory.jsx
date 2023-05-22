@@ -1,20 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { Tab, Nav, Card, Container, Row, Col, Button, Modal } from 'react-bootstrap';
+import React, { useContext, useEffect, useState } from 'react';
+import { Tab, Nav, Card, Container, Row, Col, Button } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import BestSeller from '../BestSeller';
 import NewReleases from '../NewReleases';
+import Gallery from '../Gallery';
+import ToyModal from './ToyModal';
+import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const ShopCategory = () => {
   const [activeTab, setActiveTab] = useState('1');
   const [categories, setCategories] = useState([]);
   const [bestSellerData, setBestSellerData] = useState([]);
   const [newReleasesData, setNewReleasesData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const [activeToy, setActiveToy] = useState(null);
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const location = useLocation();
+  const redirectedFromLogin = location.state?.from?.pathname === '/login';
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (redirectedFromLogin) {
+      Swal.fire({
+        icon: 'success',
+        text: 'Logged in successfully! Modal will be opened.',
+      }).then(() => {
+        // Open the modal here
+      });
+    }
+  }, [redirectedFromLogin]);
 
   const fetchData = async () => {
     try {
@@ -37,19 +56,41 @@ const ShopCategory = () => {
   };
 
   const handleModal = (toy) => {
-    setActiveToy(toy);
-    setShowModal(!showModal);
+    if (isLoggedIn()) {
+      setActiveToy(toy);
+    } else {
+      Swal.fire({
+        icon: 'info',
+        text: 'Please log in first.',
+        showCancelButton: true,
+        confirmButtonText: 'Login',
+        cancelButtonText: 'Cancel',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login', { state: { fromModal: true } }); // Pass 'fromModal' as the state
+        }
+      });
+    }
+  };
+  
+
+  const handleCloseModal = () => {
+    setActiveToy(null);
   };
 
+  const isLoggedIn = () => {
+    return user !== null; // Return true if logged in, false otherwise
+  };
   return (
     <Container className="mx-auto my-5">
-      <h2 className="text-center mb-4">Shop by Category</h2>
+      <Gallery activeToy={activeToy} categories={categories} />
+      <h2 className="text-center fw-bold mb-4">Shop by Category</h2>
       <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
         <Nav justify variant="tabs" className="mb-3">
           {categories.map((category) => (
             <Nav.Item key={category._id}>
               <Nav.Link
-                className={`fw-bold ${activeTab === category.id ? 'bg-warning' : ''}`}
+                className={`fw-bold  ${activeTab === category.id ? 'bg-warning' : ''}`}
                 eventKey={category.id}
                 style={{
                   color: activeTab === category.id ? '#ff6600' : '#000',
@@ -118,31 +159,7 @@ const ShopCategory = () => {
       <BestSeller bestSellerData={bestSellerData} />
       <NewReleases newReleasesData={newReleasesData} />
 
-      <Modal className="w-100 " show={showModal} onHide={handleModal}>
-        <Modal.Header className='border-0' closeButton>
-        </Modal.Header>
-        <Modal.Body>
-  {activeToy && (
-    <div className=" card  p-2 border-0">
-      <div className=" text-center">
-      <h3 className=" my-3 fw-bold">{activeToy.name}</h3>
-        <img className="w-50  h-100" src={activeToy.image} alt="" />
-      </div>
-      <div>
-        
-        
-        <p> <strong>Seller Name:</strong> {activeToy.sellerName}</p>
-        <p> <strong>Seller Email:</strong> {activeToy.sellerEmail}</p>
-        <p> <strong>Price: $</strong> {activeToy.price}</p>
-        <p> <strong>Rating:</strong> {activeToy.rating}</p>
-        <p> <strong>Quantity:</strong> {activeToy.quantity}</p>
-        <p> <strong>Description:</strong> {activeToy.description}</p>
-        {/* Add any other relevant data here */}
-      </div>
-    </div>
-  )}
-</Modal.Body>
-      </Modal>
+      <ToyModal toy={activeToy} handleClose={handleCloseModal} />
     </Container>
   );
 };

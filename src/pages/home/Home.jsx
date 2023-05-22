@@ -7,7 +7,7 @@ const Home = () => {
         <Container>
             <Row>
                 <Col xs={12} md={6}>
-                    <div style={{ paddingTop: "3rem" }}>
+                    <div style={{ paddingTop: "7rem" }}>
                         <p className=' fw-bold' style={{ color: '#FF5722' }}>Explore the Marvel Universe</p>
                         <h1>Unleash Your Inner Hero with Avengers Toys</h1>
                         <p>
@@ -21,7 +21,7 @@ const Home = () => {
                 </Col>
                 <Col xs={12} md={6}>
                     <div>
-                        <img className='w-100' src="https://i.ibb.co/vjkJByj/spiderman.jpg" alt="Banner" />
+                        <img className='w-100 h-75' src="https://i.ibb.co/vjkJByj/spiderman.jpg" alt="Banner" />
                     </div>
                 </Col>
             </Row>

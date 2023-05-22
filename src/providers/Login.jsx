@@ -1,22 +1,18 @@
-import { useContext, useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { Button, Container, Form, Alert, Col, Row } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import { FcGoogle } from 'react-icons/fc';
-
 import { AuthContext } from './AuthProvider';
 
 const Login = () => {
   const { signIn, setUserAndName, setUserAndPhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('log in page location', location);
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from || { pathname: '/' };
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
-
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = (event) => {
@@ -29,10 +25,10 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         const name = loggedUser.displayName;
-        const photoURL = loggedUser.photoURL; // Access photoURL from the loggedUser object
-        setUserAndName(loggedUser, name, photoURL); // Set user, name, and photoURL in the AuthContext
+        const photoURL = loggedUser.photoURL; 
+        setUserAndName(loggedUser, name, photoURL); 
         setErrorMessage('');
-        navigate(from, { replace: true });
+        navigate(from.pathname, { replace: true });
       })
       .catch((error) => {
         setErrorMessage('Invalid email or password');
@@ -47,6 +43,7 @@ const Login = () => {
       console.log(error);
     }
   };
+
 
   return (
     <Container className="mt-5">
@@ -91,3 +88,16 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+

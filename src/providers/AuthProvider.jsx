@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -24,6 +25,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log('logged in user', loggedUser);
       setUser(loggedUser);
+      setIsLoggedIn(loggedUser !== null);
     });
     return () => {
       unsubscribe();
@@ -46,6 +48,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    isLoggedIn,
     createUser,
     signIn,
     logout,
@@ -61,3 +64,6 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+
+
+
