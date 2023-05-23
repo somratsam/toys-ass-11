@@ -35,6 +35,7 @@ const AllToys = () => {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
+  console.log('filteredToys:', filteredToys)
 
   return (
     <Container style={{ marginTop: '5rem' }}>
