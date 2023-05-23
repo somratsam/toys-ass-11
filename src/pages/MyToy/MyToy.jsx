@@ -1,6 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Container, Table, Button, Modal, Form } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
+
+
+
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
@@ -28,38 +34,105 @@ const MyToy = () => {
 
   const handleUpdateSubmit = () => {
     const updatedToy = {
-      ...selectedToy,
       price: updatedPrice,
       availableQuantity: updatedQuantity,
       description: updatedDescription
     };
+  
+    fetch(`http://localhost:5000/addToy/${selectedToy._id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedToy)
+    })
+      .then(response => {
+        if (response.ok) {
+          const updatedToyList = myToy.map(toy => {
+            if (toy._id === selectedToy._id) {
+              return {
+                ...toy,
+                ...updatedToy
+              };
+            }
+            return toy;
+          });
+  
+          setMyToy(updatedToyList);
+          setShowModal(false);
+          setUpdatedPrice('');
+          setUpdatedQuantity('');
+          setUpdatedDescription('');
+          Swal.fire('Success', 'Toy information updated successfully.', 'success');
+        } else {
+          throw new Error('Failed to update toy information');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        Swal.fire('Error', 'An error occurred while updating toy information.', 'error');
+      });
+  };
+  
+  
 
-    // Update the toy in the list
-    const updatedToyList = myToy.map(toy => {
-      if (toy._id === selectedToy._id) {
-        return updatedToy;
+  const handleDelete = id => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to delete this toy.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+      cancelButtonText: 'Cancel',
+    }).then(result => {
+      if (result.isConfirmed) {
+        
+        fetch(`http://localhost:5000/addToy/${id}`, {
+          method: 'DELETE',
+        })
+          .then(response => {
+            if (response.ok) {
+              const updatedToyList = myToy.filter(toy => toy._id !== id);
+              setMyToy(updatedToyList);
+              Swal.fire('Deleted!', 'The toy has been deleted.', 'success');
+            } else {
+              Swal.fire('Error', 'Failed to delete the toy.', 'error');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            Swal.fire('Error', 'An error occurred while deleting the toy.', 'error');
+          });
       }
-      return toy;
     });
-
-    setMyToy(updatedToyList);
-    setShowModal(false);
-    setUpdatedPrice('');
-    setUpdatedQuantity('');
-    setUpdatedDescription('');
   };
 
-  const handleDelete = toyId => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this toy?');
-    if (confirmDelete) {
-      // Delete the toy from the list
-      const updatedToyList = myToy.filter(toy => toy._id !== toyId);
-      setMyToy(updatedToyList);
-    }
+  const handleSort = sortDirection => {
+    const sortUrl = `${url}&sort=${sortDirection}`;
+  
+    fetch(sortUrl)
+      .then(res => res.json())
+      .then(data => {
+        setMyToy(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        Swal.fire('Error', 'An error occurred while sorting the toys.', 'error');
+      });
   };
+  
+  
 
   return (
-    <Container>
+    <Container style = {{marginTop: '5rem'}}>
+      <div className="mb-3">
+        <Button variant="light" className="mr-2" onClick={() => handleSort('asc')}>
+          Sort by Price (Asc)
+        </Button>
+        <Button variant="light" onClick={() => handleSort('desc')}>
+          Sort by Price (Desc)
+        </Button>
+      </div>
       <Table responsive>
         <thead>
           <tr>
@@ -88,14 +161,23 @@ const MyToy = () => {
               <td>{toy.price}</td>
               <td>{toy.rating}</td>
               <td>{toy.availableQuantity}</td>
-              <td>{toy.description}</td>
               <td>
-                <Button variant="primary" onClick={() => handleUpdate(toy)}>
-                  Update
-                </Button>
-                <Button variant="danger" onClick={() => handleDelete(toy._id)}>
-                  Delete
-                </Button>
+                {toy.description.split(' ').length > 11 ? (
+                  <>
+                    {toy.description.split(' ').slice(0, 10).join(' ')}...{' '}
+                    
+                  </>
+                ) : (
+                  toy.description
+                )}
+              </td>
+              <td>
+                <button className='border-0' onClick={() => handleUpdate(toy)}>
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+                <button className='mt-4 border-0'  onClick={() => handleDelete(toy._id)}>
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </button>
               </td>
             </tr>
           ))}
@@ -140,7 +222,7 @@ const MyToy = () => {
             Cancel
           </Button>
           <Button variant="primary" onClick={handleUpdateSubmit}>
-            Save Changes
+            Apply Changes
           </Button>
         </Modal.Footer>
       </Modal>

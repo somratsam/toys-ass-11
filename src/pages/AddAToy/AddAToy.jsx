@@ -9,30 +9,27 @@ const AddAToy = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     const form = e.target;
-    const price = parseFloat(form.price.value); // Parse the price as a float
-
+    // Parse the price as a float
+  
     // Format the price as US dollars
-    const formattedPrice = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD'
-    }).format(price);
-
+    
+  
     const toyData = {
       pictureUrl: form.pictureUrl.value,
       name: form.name.value,
       sellerName: form.sellerName.value,
       sellerEmail: form.sellerEmail.value,
       subCategory: form.subCategory.value,
-      price: formattedPrice, // Use the formatted price
+      price: parseInt(form.price.value), // Use the parsed price
       rating: parseInt(form.rating.value),
       availableQuantity: parseInt(form.availableQuantity.value),
       description: form.description.value,
     };
-
+  
     console.log(toyData);
-
+  
     fetch('http://localhost:5000/addToy', {
       method: 'POST',
       headers: {
@@ -53,10 +50,11 @@ const AddAToy = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
-
+  
     // Reset the form
     form.reset();
   };
+  
 
   return (
     <Container className="mx-auto w-50">

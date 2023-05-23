@@ -6,7 +6,7 @@ const Gallery = ({ activeToy, categories }) => {
     <Container>
       {activeToy && (
         <div>
-          {/* Render the active toy details */}
+          
         </div>
       )}
 
