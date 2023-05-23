@@ -1,16 +1,22 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
-const PrivateRoute = ({children}) => {
-    const {user} = useContext(AuthContext)
+const PrivateRoute = ({ children }) => {
+  const { user } = useContext(AuthContext);
+  const location = useLocation();
 
+  if (user?.email) {
+    return children;
+  }
 
-if(user?.email) {
-    return children
-}
-
-   return <Navigate to= "login" replace></Navigate>
+  return (
+    <Navigate
+      to="/login"
+      replace
+      state={{ from: location.pathname }} // Pass the current location as state
+    />
+  );
 };
 
 export default PrivateRoute;

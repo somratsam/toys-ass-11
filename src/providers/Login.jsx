@@ -10,7 +10,11 @@ const Login = () => {
   const { signIn, setUserAndName, setUserAndPhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from || { pathname: '/' };
+
+
+const from = location.state?.from || { pathname: '/' };
+
+
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,9 +30,9 @@ const Login = () => {
         const loggedUser = result.user;
         const name = loggedUser.displayName;
         const photoURL = loggedUser.photoURL; 
-        setUserAndName(loggedUser, name, photoURL); 
+        setUserAndName(loggedUser, name, photoURL);
         setErrorMessage('');
-        navigate(from.pathname, { replace: true });
+        navigate(from, { replace: true })
       })
       .catch((error) => {
         setErrorMessage('Invalid email or password');

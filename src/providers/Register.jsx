@@ -66,7 +66,7 @@ const Register = () => {
           {errorMessage && <Form.Text className="text-danger fw-bold">{errorMessage}</Form.Text>}
         </Form.Group>
 
-        <Button variant="light rounded-5 text-dark fw-bold" type="submit">
+        <Button className="text-decoration-none fw-bold" type="submit">
           Register
         </Button>
         <br />

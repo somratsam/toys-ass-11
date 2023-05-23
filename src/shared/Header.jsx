@@ -1,12 +1,11 @@
 import { Navbar, Nav, Container, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../providers/AuthProvider';
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useContext } from 'react';
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
-  const location = useLocation();
 
   const handleLogout = () => {
     logout()

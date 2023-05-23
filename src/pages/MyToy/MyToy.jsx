@@ -17,12 +17,12 @@ const MyToy = () => {
   const [updatedQuantity, setUpdatedQuantity] = useState('');
   const [updatedDescription, setUpdatedDescription] = useState('');
 
-  const url = `http://localhost:5000/addToy?email=${user?.sellerEmail}`;
+  const url = `http://localhost:5000/addToy?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(data => setMyToy(data));
-  }, []);
+  }, [user]);
 
   const handleUpdate = toy => {
     setSelectedToy(toy);
@@ -231,3 +231,6 @@ const MyToy = () => {
 };
 
 export default MyToy;
+
+
+
