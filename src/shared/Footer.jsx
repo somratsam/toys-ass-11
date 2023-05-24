@@ -1,24 +1,26 @@
-
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className=" mt-5 bg-dark text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px" }}> 
-            <Container className='mx-auto w-100 '>
-                <Row className=' pt-4'>
+        <footer className="mt-5 bg-dark text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px" }}>
+            <Container className='mx-auto w-100'>
+                <Row className='pt-4'>
                     <Col md={4} sm={6}>
                         <h3>About</h3>
                         <p className='text-start'>
-                            <small> Welcome to The Endless Meal, your ultimate destination for delicious and inspiring food recipes. We are passionate about creating and sharing mouthwatering dishes that are not only satisfying but also easy to prepare.</small>
+                            <small>"Action Figures: Immerse yourself in a world of adventure with our extensive collection of action figures. These highly detailed and poseable toys bring your favorite characters from movies, TV shows, comics, and video games to life"</small>
                         </p>
-
                     </Col>
                     <Col md={4} sm={6}>
                         <h3>Contact Us</h3>
-                        <p > <strong>Email:</strong> <small>somratsam2@gmail.com</small> <br />
-                            <strong> Phone:</strong> <small>+968 93876228</small> <br />
-                            <strong> Address:</strong> <small>23 Main Street, California, USA</small> </p>
+                        <p>
+                            <strong>Email:</strong> <small>somratsam2@gmail.com</small> <br />
+                            <strong>Phone:</strong> <small>+968 93876228</small> <br />
+                            <strong>Address:</strong> <small>23 Main Street, California, USA</small>
+                        </p>
+
                     </Col>
                     <Col md={4} sm={12}>
                         <h3>Follow Us</h3>
@@ -39,10 +41,25 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
+                        <Form>
+                            <Form.Group controlId="formEmail">
+                                <Form.Label>Let's Stay Connected</Form.Label>
+                                <Row>
+                                    <Col xs={8}>
+                                        <Form.Control type="email" placeholder="Enter your email" />
+                                    </Col>
+                                    <Col xs={4}>
+                                        <Button variant="light"
+                                            className="rounded-5 text-light"
+                                            style={{ backgroundColor: '#FF5722' }} type="submit">Subscribe</Button>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Form>
                     </Col>
                 </Row>
-                <p className="text-center pb-4">
-                Copyright &copy; 2023 Wonder Toy. All rights reserved.
+                <p className="text-center py-4">
+                    Copyright &copy; 2023 Wonder Toy. All rights reserved.
                 </p>
             </Container>
         </footer>

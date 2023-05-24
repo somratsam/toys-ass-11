@@ -138,7 +138,7 @@ const ShopCategory = () => {
                             <div>
                               <Button
                                 variant="light"
-                                className="rounded-5 text-dark fw-bold"
+                                className="rounded-5 text-light"
                                 style={{ backgroundColor: '#FF5722' }}
                                 onClick={() => handleModal(toy)}
                               >

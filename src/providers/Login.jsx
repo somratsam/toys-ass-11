@@ -65,19 +65,19 @@ const from = location.state?.from || { pathname: '/' };
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" name="password" placeholder="Password" required />
             </Form.Group>
-            <Button variant="light rounded-5 text-dark fw-bold" type="submit" style={{ backgroundColor: '#FF5722' }}>
+            <Button variant="light rounded-5 text-light" type="submit" style={{ backgroundColor: '#FF5722' }}>
               Login
             </Button>
             <br />
-            <Form.Text>
+            <Form.Text className='text-dark fw-bold'>
               Do not have an account?{' '}
               <Link to="/register" className="text-decoration-none fw-bold">
                 Register
               </Link>
             </Form.Text>
             <br />
-            <Form.Text className="fw-bold">Or Login with</Form.Text>
-            <Button className="border-0" variant="" onClick={handleGoogleLogin}>
+            <Form.Text className="fw-bold text-dark">Or Login with</Form.Text>
+            <Button className="border-0" variant="light " onClick={handleGoogleLogin}>
               <FcGoogle />
             </Button>
             <Form.Text className="text-danger"></Form.Text>

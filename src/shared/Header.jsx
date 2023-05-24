@@ -45,12 +45,12 @@ const Header = () => {
               </OverlayTrigger>
             )}
             {user ? (
-              <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }} onClick={handleLogout}>
+              <Button variant=" rounded-5 text-light " style={{ backgroundColor: '#FF5722' }} onClick={handleLogout}>
                 Logout
               </Button>
             ) : (
               <Link to="/login">
-                <Button variant=" rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }}>
+                <Button variant=" rounded-5 text-light" style={{ backgroundColor: '#FF5722' }}>
                   Login
                 </Button>
               </Link>

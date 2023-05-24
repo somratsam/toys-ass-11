@@ -1,8 +1,9 @@
-import { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2'; // Import the sweetalert2 library
 import app from '../firebase/firebase.config';
 
 const Register = () => {
@@ -29,10 +30,14 @@ const Register = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const createdUser = result.user;
-        updateProfile(createdUser, { displayName: name, photoURL: photo }) // Set user's display name and photoURL
+        updateProfile(createdUser, { displayName: name, photoURL: photo })
           .then(() => {
-            setUserAndName(createdUser, name, photo); // Pass the photoURL to setUserAndName
-            console.log(name);
+            setUserAndName(createdUser, name, photo);
+            Swal.fire({
+              icon: 'success',
+              title: 'Registration Successful',
+              text: 'You have successfully registered.',
+            });
           })
           .catch((error) => {
             console.log(error);
@@ -70,7 +75,7 @@ const Register = () => {
           Register
         </Button>
         <br />
-        <Form.Text className="text-light">
+        <Form.Text className="text-dark fw-bold">
           Already have an account?{' '}
           <Link to="/login" className="text-decoration-none fw-bold">
             Login

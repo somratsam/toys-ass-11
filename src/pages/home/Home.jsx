@@ -8,7 +8,7 @@ import ShopCategory from "./shopbycetegory/ShopCategory";
 const Home = () => {
 
     useEffect(() => {
-        AOS.init({ duration: 2000 }); // You can customize the duration as per your preference
+        AOS.init({ duration: 2000 });
       }, []);
       
 
@@ -24,7 +24,7 @@ const Home = () => {
                                 Embark on thrilling adventures with our wide range of Avengers toys. From action figures to collectibles, immerse yourself in the epic world of Iron Man, Captain America, Thor, Black Widow, and more. Let your imagination soar as you recreate iconic battles, assemble your team of heroes, and defend the universe against powerful villains. Whether you are a fan or a collector, our Avengers toys bring the excitement of the Marvel Universe to life.
                             </small>
                         </p>
-                        <Button variant="light" className="rounded-5 text-dark fw-bold" style={{ backgroundColor: '#FF5722' }}>Shop Now</Button>
+                        <Button variant="light" className="rounded-5 text-light " style={{ backgroundColor: '#FF5722' }}>Shop Now</Button>
 
                     </div>
                 </Col>
