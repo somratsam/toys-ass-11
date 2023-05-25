@@ -11,14 +11,14 @@ const Gallery = ({ activeToy, categories }) => {
   }, []);
 
   return (
-    <Container>
+    <Container style={{marginTop: '6rem'}}>
       {activeToy && (
         <div>
           {/* Render activeToy details */}
         </div>
       )}
 
-      <h3 className='text-center fw-bold'>Toys Gallery</h3>
+      
       {categories.map((category) => (
         <div key={category._id}>
           <div className="d-flex flex-wrap justify-content-center">
@@ -27,11 +27,11 @@ const Gallery = ({ activeToy, categories }) => {
                 <Row className="justify-content-center">
                   {subcategory.toys.map((toy, index) => (
                     <Col key={index} xs={12}>
-                      <Card className="m-2 p-3 shadow border-0" style={{ width: '18rem' }}>
+                      <Card className="m-2 p-2 shadow " style={{ width: '18rem' }}>
                         {/* Replace the Card component with ImageGallery */}
                         <ImageGallery
                           items={subcategory.toys.map((toy, index) => ({
-                            original: toy.image,
+                            original: toy.galleryImg,
                             originalAlt: `Toy ${index + 1}`,
                           }))}
                           showPlayButton={false}

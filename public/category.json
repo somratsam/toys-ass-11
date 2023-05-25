@@ -8,7 +8,8 @@
         "toys": [
           {
             "name": "Iron Man",
-            "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+            "image": "https://i.ibb.co/mvB8sv4/bcciron1-removebg-preview.png",
+            "galleryImg" : "https://i.ibb.co/jHH2gfB/gettyimages-458988149-612x612-1.jpg",
             "price": 29.99,
             "rating": 4.5,
             "sellerName": "Toy Universe",
@@ -23,7 +24,8 @@
         "toys": [
           {
             "name": "Spider-Man",
-            "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+            "image": "https://i.ibb.co/QvL0kGL/spiderman-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/CwcrNfd/imaggallery6-1.jpg",
             "price": 24.99,
             "rating": 4.3,
             "sellerName": "Super Toys",
@@ -38,7 +40,8 @@
         "toys": [
           {
             "name": "Hulk",
-            "image": "https://i.ibb.co/WnhLNh7/hulk.jpg",
+            "image": "https://i.ibb.co/LhF2hrR/hulknew-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/yVhz97v/imaggallery2-1.jpg",
             "price": 24.99,
             "rating": 4.3,
             "sellerName": "Mighty Collectibles",
@@ -52,7 +55,7 @@
     "bestSellers": [
       {
         "name": "Spider-Man",
-        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+        "image": "https://i.ibb.co/QvL0kGL/spiderman-removebg-preview.png",
         "price": 24.99,
         "rating": 4.3,
         "sellerName": "Super Toys",
@@ -62,7 +65,7 @@
       },
       {
         "name": "Iron Man",
-        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+        "image": "https://i.ibb.co/mvB8sv4/bcciron1-removebg-preview.png",
         "price": 29.99,
         "rating": 4.5,
         "sellerName": "Toy Universe",
@@ -72,7 +75,7 @@
       },
       {
         "name": "Captain America",
-        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+        "image": "https://i.ibb.co/12fZmPR/captain-america-removebg-preview.png",
         "price": 27.99,
         "rating": 4.4,
         "sellerName": "Awesome Toys",
@@ -84,7 +87,7 @@
     "newReleases": [
       {
         "name": "Black Widow",
-        "image": "https://i.ibb.co/6XW1VSh/black.webp",
+        "image": "https://i.ibb.co/ft8bNHX/71-T1-Oc-B75-S-AC1-UL400-removebg-preview.png",
         "price": 26.99,
         "rating": 4.4,
         "sellerName": "Action Figures Galore",
@@ -123,7 +126,8 @@
         "toys": [
           {
             "name": "Captain America",
-            "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+            "image": "https://i.ibb.co/12fZmPR/captain-america-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/tbhRbLw/imaggallery3-1.jpg",
             "price": 27.99,
             "rating": 4.4,
             "sellerName": "Awesome Toys",
@@ -138,7 +142,8 @@
         "toys": [
           {
             "name": "Thor",
-            "image": "https://i.ibb.co/ryHt4wV/thortoys.webp",
+            "image": "https://i.ibb.co/PN07V01/81g-ULSju0f-L-AC-UL400-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/YXcwYVb/imaggallery4-1.jpg",
             "price": 31.99,
             "rating": 4.2,
             "sellerName": "Mighty Collectibles",
@@ -153,7 +158,8 @@
         "toys": [
           {
             "name": "Black Panther",
-            "image": "https://i.ibb.co/gP2gT3N/blackpan.jpg",
+            "image": "https://i.ibb.co/FxRW1Qs/blackpanther-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/9sp1wdh/imggallary-1.jpg.jpg",
             "price": 31.99,
             "rating": 4.2,
             "sellerName": "Superhero Toys",
@@ -167,7 +173,7 @@
     "bestSellers": [
       {
         "name": "Spider-Man",
-        "image": "https://i.ibb.co/yBQSJD0/spidemanccc.jpg",
+        "image": "https://i.ibb.co/QvL0kGL/spiderman-removebg-preview.png",
         "price": 24.99,
         "rating": 4.3,
         "sellerName": "Super Toys",
@@ -177,7 +183,7 @@
       },
       {
         "name": "Iron Man",
-        "image": "https://i.ibb.co/nrTPs12/iron.jpg",
+        "image": "https://i.ibb.co/mvB8sv4/bcciron1-removebg-preview.png",
         "price": 29.99,
         "rating": 4.5,
         "sellerName": "Toy Universe",
@@ -187,7 +193,7 @@
       },
       {
         "name": "Captain America",
-        "image": "https://i.ibb.co/bmq9ssC/gcaptain.jpg",
+        "image": "https://i.ibb.co/12fZmPR/captain-america-removebg-preview.png",
         "price": 27.99,
         "rating": 4.4,
         "sellerName": "Awesome Toys",
@@ -199,7 +205,7 @@
     "newReleases": [
       {
         "name": "Black Widow",
-        "image": "https://i.ibb.co/6XW1VSh/black.webp",
+        "image": "https://i.ibb.co/ft8bNHX/71-T1-Oc-B75-S-AC1-UL400-removebg-preview.png",
         "price": 26.99,
         "rating": 4.4,
         "sellerName": "Action Figures Galore",
@@ -209,7 +215,7 @@
       },
       {
         "name": "Captain Marvel",
-        "image": "https://i.ibb.co/nPrTQNy/61ac56-a-Wv-L-AC-UF894-1000-QL80.jpg",
+        "image": "https://i.ibb.co/KG1QvRF/captainmarbel-removebg-preview.png",
         "price": 32.99,
         "rating": 4.2,
         "sellerName": "Hero Toys",
@@ -219,7 +225,7 @@
       },
       {
         "name": "Star scream",
-        "image": "https://i.ibb.co/mymDMjM/81-Jv3r-L7sr-L.jpg",
+        "image": "https://i.ibb.co/vsgw2zC/optimum-removebg-preview.png",
         "price": 32.99,
         "rating": 4.2,
         "sellerName": "Robo Toys",
@@ -238,7 +244,8 @@
         "toys": [
           {
             "name": "Optimus Prime",
-            "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
+            "image": "https://i.ibb.co/FwWnjDN/Megatron-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/T4xXsqT/king-lip-mp295uolf-Ds-unsplash-1.jpg",
             "price": 36.99,
             "rating": 4.6,
             "sellerName": "Robo Toys",
@@ -253,7 +260,8 @@
         "toys": [
           {
             "name": "Bumblebee",
-            "image": "https://i.ibb.co/7nVskz1/7101-F0-r-KTL.jpg",
+            "image": "https://i.ibb.co/BP9Sx05/starscam-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/37fgjBt/humberto-portillo-t-DJ9yx-HAMFw-unsplash-2.jpg",
             "price": 28.99,
             "rating": 4.3,
             "sellerName": "Toy Universe",
@@ -268,7 +276,8 @@
         "toys": [
           {
             "name": "Megatron",
-            "image": "https://i.ibb.co/wr0XwGJ/919-1tl-Od-AL.jpg",
+            "image": "https://i.ibb.co/zRhM2yT/bumblee-removebg-preview.png",
+            "galleryImg": "https://i.ibb.co/L0vVSKS/joseph-costa-TWhw4dr1g-Mw-unsplash-2.jpg",
             "price": 34.99,
             "rating": 4.4,
             "sellerName": "Mighty Collectibles",
@@ -282,7 +291,7 @@
     "bestSellers": [
       {
         "name": "Optimus Prime",
-        "image": "https://i.ibb.co/qn12zTp/Optimus-Prime.jpg",
+        "image": "https://i.ibb.co/FwWnjDN/Megatron-removebg-preview.png",
         "price": 36.99,
         "rating": 4.6,
         "sellerName": "Robo Toys",
@@ -292,7 +301,7 @@
       },
       {
         "name": "Bumblebee",
-        "image": "https://i.ibb.co/7nVskz1/7101-F0-r-KTL.jpg",
+        "image": "https://i.ibb.co/BP9Sx05/starscam-removebg-preview.png",
         "price": 28.99,
         "rating": 4.3,
         "sellerName": "Toy Universe",
@@ -302,7 +311,7 @@
       },
       {
         "name": "Megatron",
-        "image": "https://i.ibb.co/wr0XwGJ/919-1tl-Od-AL.jpg",
+        "image": "https://i.ibb.co/zRhM2yT/bumblee-removebg-preview.png",
         "price": 34.99,
         "rating": 4.4,
         "sellerName": "Mighty Collectibles",
@@ -324,7 +333,7 @@
       },
       {
         "name": "Starscream",
-        "image": "https://i.ibb.co/sPtGQ1B/starscream.jpg",
+        "image": "https://i.ibb.co/vsgw2zC/optimum-removebg-preview.png",
         "price": 31.99,
         "rating": 4.1,
         "sellerName": "Super Toys",

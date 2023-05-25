@@ -14,8 +14,8 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
+    <Navbar  >
+      <Container >
         <Navbar.Brand>
           <img src="https://i.ibb.co/xhM0hzM/0-0-removebg-preview.png" alt="" style={{ height: '40px', width: '40px' }} />
           <span className="fw-bold" style={{ color: '#FF5722' }}>

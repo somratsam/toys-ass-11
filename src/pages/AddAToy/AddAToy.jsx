@@ -58,7 +58,7 @@ const AddAToy = () => {
 
   return (
     <Container className="mx-auto w-50">
-      <h1>Add A Toy</h1>
+      <h1 className='text-center my-5'>Add A Toy</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="pictureUrl">
           <Form.Label>Picture URL of the toy</Form.Label>
@@ -70,7 +70,7 @@ const AddAToy = () => {
         </Form.Group>
 
         <Form.Group controlId="name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label> Toy Name</Form.Label>
           <Form.Control
             type="text"
             name="name"

@@ -16,7 +16,7 @@ const Main = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{ background: 'linear-gradient(to bottom, #0F3057, #27496D, #6096BA)' }}>
             {!isLoading && <Header />}
             {isLoading ? (
                 <div style={{ height: '100vh' }} className="spinner-container d-flex align-items-center justify-content-center">
@@ -34,3 +34,16 @@ const Main = () => {
 };
 
 export default Main;
+
+
+
+
+
+
+
+
+
+
+
+
+

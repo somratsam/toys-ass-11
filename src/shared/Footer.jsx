@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="mt-5 bg-dark text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px" }}>
+        <footer className="mt-5 bg-dark  text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px", marginTop: "-100px" }}>
             <Container className='mx-auto w-100'>
                 <Row className='pt-4'>
                     <Col md={4} sm={6}>
@@ -24,20 +24,20 @@ const Footer = () => {
                     </Col>
                     <Col md={4} sm={12}>
                         <h3>Follow Us</h3>
-                        <ul className="social-icons list-unstyled">
+                        <ul className="social-icons d-flex  gap-3 list-unstyled">
                             <li>
                                 <a className='text-decoration-none' href="https://www.facebook.com/profile.php?id=100004894309114" target="_blank" rel="noopener noreferrer">
-                                    <FaFacebookF /> Abdul Aziz
+                                    <FaFacebookF />
                                 </a>
                             </li>
                             <li>
                                 <a className='text-decoration-none' href="https://twitter.com/AbdulAz78635266">
-                                    <FaTwitter /> Abdul Aziz
+                                    <FaTwitter />
                                 </a>
                             </li>
                             <li>
                                 <a className='text-decoration-none' href="https://www.instagram.com/sanjusomrat/">
-                                    <FaInstagram /> Sanju Somrat
+                                    <FaInstagram />
                                 </a>
                             </li>
                         </ul>
@@ -56,6 +56,7 @@ const Footer = () => {
                                 </Row>
                             </Form.Group>
                         </Form>
+                        <p className='py-3'>Terms Of Service | Privacy Policy | Refund Policy | Accessibility Policy</p>
                     </Col>
                 </Row>
                 <p className="text-center py-4">

@@ -8,6 +8,9 @@ import ToyModal from './ToyModal';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const ShopCategory = () => {
   const [activeTab, setActiveTab] = useState('1');
@@ -22,7 +25,15 @@ const ShopCategory = () => {
 
   useEffect(() => {
     fetchData();
+
+    AOS.init({
+      duration: 800, // Animation duration
+      once: false, // Animation will occur only once
+      easing: 'ease-in-out', // Easing function for animations
+    });
   }, []);
+
+
 
   useEffect(() => {
     if (redirectedFromLogin) {
@@ -30,7 +41,7 @@ const ShopCategory = () => {
         icon: 'success',
         text: 'Logged in successfully! Modal will be opened.',
       }).then(() => {
-        // Open the modal here
+
       });
     }
   }, [redirectedFromLogin]);
@@ -72,28 +83,30 @@ const ShopCategory = () => {
       });
     }
   };
-  
+
 
   const handleCloseModal = () => {
     setActiveToy(null);
   };
 
   const isLoggedIn = () => {
-    return user !== null; // Return true if logged in, false otherwise
+    return user !== null;
   };
   return (
-    <Container className="mx-auto my-5">
+
+    <Container     >
       <Gallery activeToy={activeToy} categories={categories} />
-      <h2 className="text-center fw-bold mb-4">Shop by Category</h2>
-      <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
-        <Nav justify variant="tabs" className="mb-3">
+      <h2 className="text-center fw-bold mb-4" style={{marginTop: '10rem', color:'#F0F8FF'}}>Shop by Category</h2>
+      <Tab.Container  activeKey={activeTab} onSelect={handleTabSelect}>
+        <div className='d-flex justify-content-center'>
+        <Nav justify variant="tabs" className="mb-3 w-50 d-flex justify-content-center border-0">
           {categories.map((category) => (
             <Nav.Item key={category._id}>
               <Nav.Link
-                className={`fw-bold  ${activeTab === category.id ? 'bg-warning' : ''}`}
+                className={`fw-bold  ${activeTab === category.id ? 'bg-warning' : '#F0F8FF'}`}
                 eventKey={category.id}
                 style={{
-                  color: activeTab === category.id ? '#ff6600' : '#000',
+                  color: activeTab === category.id ? '#F0F8FF' : '#000', 
                 }}
               >
                 {category.name}
@@ -101,17 +114,18 @@ const ShopCategory = () => {
             </Nav.Item>
           ))}
         </Nav>
-        <Tab.Content>
+        </div>
+        <Tab.Content >
           {categories.map((category) => (
             <Tab.Pane key={category._id} eventKey={category.id}>
               <div className="d-flex flex-wrap justify-content-center">
                 {category.subcategories.map((subcategory) => (
-                  <div key={subcategory.name} className="mx-2 my-3">
+                  <div key={subcategory.name} className="mx-2 my-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" >
                     <h4 className="text-center fw-bold mt-4">{subcategory.name}</h4>
                     <Row className="justify-content-center">
                       {subcategory.toys.map((toy, index) => (
                         <Col key={index} xs={12}>
-                          <Card className="m-2 p-3 shadow border-0" style={{ width: '18rem' }}>
+                          <Card className="m-2 p-3  shadow border-0" style={{ width: '18rem', background: '#F0F8FF' }}>
                             <Card.Img
                               variant="top"
                               src={toy.image}
@@ -161,6 +175,7 @@ const ShopCategory = () => {
 
       <ToyModal toy={activeToy} handleClose={handleCloseModal} />
     </Container>
+
   );
 };
 
