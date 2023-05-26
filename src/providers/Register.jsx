@@ -77,8 +77,8 @@ const Register = () => {
               </Form.Group>
 
               <Button variant="light rounded-5 text-light" type="submit" style={{ backgroundColor: '#FF5722' }}>
-              Register
-            </Button>
+                Register
+              </Button>
               <br />
               <Form.Text className="text-dark fw-bold">
                 Already have an account?{' '}

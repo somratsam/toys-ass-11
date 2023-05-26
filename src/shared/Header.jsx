@@ -18,7 +18,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand>
           <img src="https://i.ibb.co/xhM0hzM/0-0-removebg-preview.png" alt="" style={{ height: '40px', width: '40px' }} />
-          <Link className='text-decoration-none' to = "/"><span className="fw-bold " style={{ color: '#FF5722' }}>
+          <Link className='text-decoration-none' to="/"><span className="fw-bold " style={{ color: '#FF5722' }}>
             Wonder Toy
           </span></Link>
         </Navbar.Brand>

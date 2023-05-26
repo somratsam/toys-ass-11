@@ -53,7 +53,7 @@ const Footer = () => {
                                     </Col>
                                     <Col xs={4}>
                                         <Button variant="light"
-                                            className="rounded-5 text-light"
+                                            className="rounded-5 text-light border-0"
                                             style={{ backgroundColor: '#FF5722' }} type="submit">Subscribe</Button>
                                     </Col>
                                 </Row>

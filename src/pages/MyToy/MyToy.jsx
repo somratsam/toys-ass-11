@@ -117,7 +117,7 @@ const MyToy = () => {
       .then(data => {
         const sortedData = data.map(toy => ({
           ...toy,
-          price: parseFloat(toy.price) // Convert price to a number
+          price: parseFloat(toy.price)
         }));
   
         sortedData.sort((a, b) => {

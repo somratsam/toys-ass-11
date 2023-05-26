@@ -7,14 +7,14 @@ import 'aos/dist/aos.css';
 
 const Gallery = ({ activeToy, categories }) => {
   useEffect(() => {
-    AOS.init(); // Initialize AOS library
+    AOS.init();
   }, []);
 
   return (
     <Container style={{marginTop: '6rem'}}>
       {activeToy && (
         <div>
-          {/* Render activeToy details */}
+  
         </div>
       )}
 

@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Table, Button, Modal } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../providers/AuthProvider';
 import useTitle from '../hooks/useTitle';
@@ -71,7 +69,7 @@ const AllToys = () => {
         cancelButtonText: 'Cancel',
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/login', { state: { fromModal: true, toyId: toy._id } }); // Pass 'fromModal' and 'toyId' as the state
+          navigate('/login', { state: { fromModal: true, toyId: toy._id } });
         }
       });
     }
@@ -83,95 +81,95 @@ const AllToys = () => {
   };
 
   const isLoggedIn = () => {
-    return user !== null; // Return true if logged in, false otherwise
+    return user !== null;
   };
 
   return (
-   <div className='bg-light py-1' style={{ backgroundColor: "transparent", marginBottom: "-47px" }} >
-     <Container style={{ marginTop: '3rem' }}>
-      <div className="mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search by Toy Name"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </div>
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>Seller</th>
-            <th>Toy Name</th>
-            <th>Sub-category</th>
-            <th>Price</th>
-            <th>Available Quantity</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredToys.slice(0, 20).map((toy) => (
-            <tr key={toy._id}>
-              <td>{toy.sellerName || 'N/A'}</td>
-              <td>{toy.name}</td>
-              <td>{toy.subCategory}</td>
-              <td>${toy.price}</td>
-              <td>{toy.availableQuantity}</td>
-              <td>
-                <Button className=' rounded-5 border-0 ' style={{ backgroundColor: '#FF5722' }} onClick={() => handleViewDetails(toy)}>
-                   View Details
-                </Button>
-              </td>
+    <div className='bg-light py-1' style={{ backgroundColor: "transparent", marginBottom: "-47px" }} >
+      <Container style={{ marginTop: '3rem' }}>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search by Toy Name"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+        </div>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Seller</th>
+              <th>Toy Name</th>
+              <th>Sub-category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {filteredToys.slice(0, 20).map((toy) => (
+              <tr key={toy._id}>
+                <td>{toy.sellerName || 'N/A'}</td>
+                <td>{toy.name}</td>
+                <td>{toy.subCategory}</td>
+                <td>${toy.price}</td>
+                <td>{toy.availableQuantity}</td>
+                <td>
+                  <Button className=' rounded-5 border-0 ' style={{ backgroundColor: '#FF5722' }} onClick={() => handleViewDetails(toy)}>
+                    View Details
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
 
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Toy Details</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {selectedToy && (
-            <div>
-              <div className="card p-2 border-0">
-                <div className="text-center">
-                  
-                  <img className="w-50 h-100" src={selectedToy.pictureUrl} alt="" />
-                </div>
-                <div>
-                <h3 className="my-3 fw-bold">{selectedToy.name}</h3>
-                  <p>
-                    <strong>Seller Name:</strong> {selectedToy.sellerName}
-                  </p>
-                  <p>
-                    <strong>Seller Email:</strong> {selectedToy.sellerEmail}
-                  </p>
-                  <p>
-                    <strong>Price: $</strong> {selectedToy.price}
-                  </p>
-                  <p>
-                    <strong>Rating:</strong> {selectedToy.rating}
-                  </p>
-                  <p>
-                    <strong>Quantity:</strong> {selectedToy.quantity}
-                  </p>
-                  <p>
-                    <strong>Description:</strong> {selectedToy.description}
-                  </p>
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Toy Details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {selectedToy && (
+              <div>
+                <div className="card p-2 border-0">
+                  <div className="text-center">
+
+                    <img className="w-50 h-100" src={selectedToy.pictureUrl} alt="" />
+                  </div>
+                  <div>
+                    <h3 className="my-3 fw-bold">{selectedToy.name}</h3>
+                    <p>
+                      <strong>Seller Name:</strong> {selectedToy.sellerName}
+                    </p>
+                    <p>
+                      <strong>Seller Email:</strong> {selectedToy.sellerEmail}
+                    </p>
+                    <p>
+                      <strong>Price: $</strong> {selectedToy.price}
+                    </p>
+                    <p>
+                      <strong>Rating:</strong> {selectedToy.rating}
+                    </p>
+                    <p>
+                      <strong>Quantity:</strong> {selectedToy.quantity}
+                    </p>
+                    <p>
+                      <strong>Description:</strong> {selectedToy.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </Container>
-   </div>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
+    </div>
   );
 };
 

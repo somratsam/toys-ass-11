@@ -12,8 +12,8 @@ const Home = () => {
   }, []);
 
   return (
-    
-        <Container style={{fontFamily: 'Open Sans, sans-serif'}}>
+
+    <Container style={{ fontFamily: 'Open Sans, sans-serif' }}>
       <Row >
         <Col xs={12} md={6} data-aos="fade-right">
           <div style={{ paddingTop: "7rem" }}>
@@ -40,7 +40,7 @@ const Home = () => {
 
       <ShopCategory backgroundColor="rgb(255, 255, 255)" />
     </Container>
-    
+
   );
 };
 

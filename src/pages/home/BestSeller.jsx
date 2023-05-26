@@ -17,7 +17,7 @@ const BestSeller = ({ bestSellerData }) => {
   return (
     <div>
       <h4 className="text-center my-5 fw-bold text-light">Best Sellers</h4>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center bg-dark rounded-4">
         {bestSellerData.map((toy, toyIndex) => (
           <Col key={toyIndex} xs={12} md={4}>
             <Card

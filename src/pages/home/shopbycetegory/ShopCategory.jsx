@@ -28,9 +28,9 @@ const ShopCategory = () => {
     fetchData();
 
     AOS.init({
-      duration: 800, // Animation duration
-      once: false, // Animation will occur only once
-      easing: 'ease-in-out', // Easing function for animations
+      duration: 800,
+      once: false,
+      easing: 'ease-in-out',
     });
   }, []);
 
@@ -97,24 +97,24 @@ const ShopCategory = () => {
 
     <Container     >
       <Gallery activeToy={activeToy} categories={categories} />
-      <h2 className="text-center fw-bold mb-4" style={{marginTop: '10rem', color:'#F0F8FF'}}>Shop by Category</h2>
-      <Tab.Container  activeKey={activeTab} onSelect={handleTabSelect}>
+      <h2 className="text-center fw-bold mb-4" style={{ marginTop: '10rem', color: '#F0F8FF' }}>Shop by Category</h2>
+      <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
         <div className='d-flex justify-content-center'>
-        <Nav justify variant="tabs" className="mb-3 w-50 d-flex justify-content-center border-0">
-          {categories.map((category) => (
-            <Nav.Item key={category._id}>
-              <Nav.Link
-                className={`fw-bold  ${activeTab === category.id ? 'bg-primary' : '#F0F8FF'}`}
-                eventKey={category.id}
-                style={{
-                  color: activeTab === category.id ? '#F0F8FF' : '#000', 
-                }}
-              >
-                {category.name}
-              </Nav.Link>
-            </Nav.Item>
-          ))}
-        </Nav>
+          <Nav justify variant="tabs" className="mb-3 w-50 d-flex justify-content-center border-0">
+            {categories.map((category) => (
+              <Nav.Item key={category._id}>
+                <Nav.Link
+                  className={`fw-bold   ${activeTab === category.id ? 'bg-danger border-0  opacity-90' : '#F0F8FF'}`}
+                  eventKey={category.id}
+                  style={{
+                    color: activeTab === category.id ? '#F0F8FF' : '#000',
+                  }}
+                >
+                  {category.name}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+          </Nav>
         </div>
         <Tab.Content >
           {categories.map((category) => (
@@ -122,8 +122,8 @@ const ShopCategory = () => {
               <div className="d-flex flex-wrap justify-content-center">
                 {category.subcategories.map((subcategory) => (
                   <div key={subcategory.name} className="mx-2 my-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" >
-                    
-                    <Row className="justify-content-center">
+
+                    <Row className="justify-content-center bg-dark rounded-4">
                       {subcategory.toys.map((toy, index) => (
                         <Col key={index} xs={12}>
                           <Card className="m-2 p-3  shadow border-0" style={{ width: '18rem', background: '#6096BA' }}>
@@ -135,8 +135,8 @@ const ShopCategory = () => {
                             />
                             <Card.Body className="d-flex flex-column justify-content-between text-light">
                               <div>
-                            
-                              <Card.Text>{subcategory.name}</Card.Text>
+
+                                <Card.Text>{subcategory.name}</Card.Text>
                                 <Card.Text>Price: ${toy.price}</Card.Text>
                                 <span className="rating">
                                   {[...Array(5)].map((_, ratingIndex) => (
