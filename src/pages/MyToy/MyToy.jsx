@@ -19,7 +19,7 @@ const MyToy = () => {
   const [updatedDescription, setUpdatedDescription] = useState('');
   useTitle('My Toys')
 
-  const url = `http://localhost:5000/addToy?email=${user?.email}`;
+  const url = `https://toy-server-ass-11.vercel.app:5000/addToy?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -41,7 +41,7 @@ const MyToy = () => {
       description: updatedDescription
     };
 
-    fetch(`http://localhost:5000/addToy/${selectedToy._id}`, {
+    fetch(`https://toy-server-ass-11.vercel.app:5000/addToy/${selectedToy._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ const MyToy = () => {
     }).then(result => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/addToy/${id}`, {
+        fetch(`https://toy-server-ass-11.vercel.app:5000/addToy/${id}`, {
           method: 'DELETE',
         })
           .then(response => {

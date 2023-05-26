@@ -30,7 +30,7 @@ const AllToys = () => {
   }, [redirectedFromLogin]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/allToys')
+    fetch('https://toy-server-ass-11.vercel.app:5000/allToys')
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

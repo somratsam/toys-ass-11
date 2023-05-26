@@ -49,7 +49,7 @@ const ShopCategory = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/toys');
+      const response = await fetch('https://toy-server-ass-11.vercel.app:5000/toys');
       const data = await response.json();
       setCategories(data);
       setBestSellerData(data[0].bestSellers);
