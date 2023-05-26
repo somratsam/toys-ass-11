@@ -5,6 +5,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../providers/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -16,6 +17,7 @@ const AllToys = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const redirectedFromLogin = location.state?.from?.pathname === '/login';
+  useTitle('All Toys')
 
 
   useEffect(() => {
@@ -85,7 +87,8 @@ const AllToys = () => {
   };
 
   return (
-    <Container style={{ marginTop: '5rem' }}>
+   <div className='bg-light py-1' style={{ backgroundColor: "transparent", marginBottom: "-47px" }} >
+     <Container style={{ marginTop: '3rem' }}>
       <div className="mb-3">
         <input
           type="text"
@@ -115,8 +118,8 @@ const AllToys = () => {
               <td>${toy.price}</td>
               <td>{toy.availableQuantity}</td>
               <td>
-                <Button variant="primary" onClick={() => handleViewDetails(toy)}>
-                  <FontAwesomeIcon icon={faCartPlus} /> View Details
+                <Button className=' rounded-5 border-0 ' style={{ backgroundColor: '#FF5722' }} onClick={() => handleViewDetails(toy)}>
+                   View Details
                 </Button>
               </td>
             </tr>
@@ -168,6 +171,7 @@ const AllToys = () => {
         </Modal.Footer>
       </Modal>
     </Container>
+   </div>
   );
 };
 

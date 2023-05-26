@@ -4,7 +4,9 @@ import "aos/dist/aos.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import ShopCategory from "./shopbycetegory/ShopCategory";
 import '../home/Home.css'
+import useTitle from "../../hooks/useTitle";
 const Home = () => {
+  useTitle('Home')
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);

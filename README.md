@@ -1,1 +1,20 @@
 - initial layout and route setup
+- Create responsive navbar
+- Create banner with image and important text related to site
+- Create gallery with Aos package
+- Create shop category and display three category of toys using react tab
+- Create view details button and display modal, once user click the button he/she will see toy details
+- Create best selling toy section
+- Create new release toy section
+- Create meaningful footer
+- Create form for adding toy by user
+- Create a section once user add some toys it will show my toys page
+- Create a section once all user adding toy it will show the all toy pages
+- Create login pages
+- Create registration page
+- Create Blog page for answering the question
+- Create 404 page
+- Create dynamic route
+- Create loading spinner
+- Use Aos package for home page
+- Live site link: 

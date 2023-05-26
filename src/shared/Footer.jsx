@@ -4,11 +4,14 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="mt-5 bg-dark  text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px", marginTop: "-100px" }}>
+        <footer className="mt-5 bg-dark  text-white" style={{ backgroundColor: "transparent", marginBottom: "-20px" }}>
             <Container className='mx-auto w-100'>
                 <Row className='pt-4'>
                     <Col md={4} sm={6}>
-                        <h3>About</h3>
+                        <img src="https://i.ibb.co/xhM0hzM/0-0-removebg-preview.png" alt="" style={{ height: '40px', width: '40px' }} />
+                        <span className="fw-bold" style={{ color: '#FF5722' }}>
+                            Wonder Toy
+                        </span>
                         <p className='text-start'>
                             <small>"Action Figures: Immerse yourself in a world of adventure with our extensive collection of action figures. These highly detailed and poseable toys bring your favorite characters from movies, TV shows, comics, and video games to life"</small>
                         </p>

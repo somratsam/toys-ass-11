@@ -2,18 +2,18 @@ import { useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  useTitle('Add A Toy')
 
   const handleSubmit = (e) => {
     e.preventDefault();
   
     const form = e.target;
-    // Parse the price as a float
   
-    // Format the price as US dollars
     
   
     const toyData = {
@@ -22,9 +22,9 @@ const AddAToy = () => {
       sellerName: form.sellerName.value,
       sellerEmail: form.sellerEmail.value,
       subCategory: form.subCategory.value,
-      price: parseInt(form.price.value), // Use the parsed price
-      rating: parseInt(form.rating.value),
-      availableQuantity: parseInt(form.availableQuantity.value),
+      price: parseFloat(form.price.value),
+      rating: parseFloat(form.rating.value),
+      availableQuantity: parseFloat(form.availableQuantity.value),
       description: form.description.value,
     };
   
@@ -57,8 +57,9 @@ const AddAToy = () => {
   
 
   return (
-    <Container className="mx-auto w-50">
-      <h1 className='text-center my-5'>Add A Toy</h1>
+    <div className='bg-light py-3' style={{ backgroundColor: "transparent", marginBottom: "-47px" }}>
+      <Container className="mx-auto w-50">
+      <h1 className='text-center my-2'>Add A Toy</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="pictureUrl">
           <Form.Label>Picture URL of the toy</Form.Label>
@@ -145,11 +146,12 @@ const AddAToy = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button style={{ backgroundColor: '#FF5722' }} className='border-0 rounded-3 pt-2' type="submit">
           Submit
         </Button>
       </Form>
     </Container>
+    </div>
   );
 };
 

@@ -5,11 +5,13 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvide
 import app from '../firebase/firebase.config';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from './AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
   const { signIn, setUserAndName, setUserAndPhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle('Login')
 
 
 const from = location.state?.from || { pathname: '/' };
@@ -50,9 +52,10 @@ const from = location.state?.from || { pathname: '/' };
 
 
   return (
-    <Container className="mt-5">
+    <div className='bg-light py-1' style={{ backgroundColor: "transparent", marginBottom: "-47px" }}>
+      <Container className="my-5">
       <Row className="justify-content-center align-items-center">
-        <Col xs={12} md={6} className='card shadow border-0'>
+        <Col xs={12} md={6} className='card shadow border-0 p-3' >
           <h3 className='text-center'>Login</h3>
           <Form onSubmit={handleLogin}>
             {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
@@ -88,6 +91,7 @@ const from = location.state?.from || { pathname: '/' };
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

@@ -17,6 +17,7 @@ const ShopCategory = () => {
   const [categories, setCategories] = useState([]);
   const [bestSellerData, setBestSellerData] = useState([]);
   const [newReleasesData, setNewReleasesData] = useState([]);
+  const [rating, setRating] = useState(0);
   const [activeToy, setActiveToy] = useState(null);
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -62,8 +63,8 @@ const ShopCategory = () => {
     setActiveTab(key);
   };
 
-  const handleRatingChange = (rating) => {
-    console.log('Selected rating:', rating);
+  const handleRatingChange = (value) => {
+    setRating(value)
   };
 
   const handleModal = (toy) => {
@@ -103,7 +104,7 @@ const ShopCategory = () => {
           {categories.map((category) => (
             <Nav.Item key={category._id}>
               <Nav.Link
-                className={`fw-bold  ${activeTab === category.id ? 'bg-warning' : '#F0F8FF'}`}
+                className={`fw-bold  ${activeTab === category.id ? 'bg-primary' : '#F0F8FF'}`}
                 eventKey={category.id}
                 style={{
                   color: activeTab === category.id ? '#F0F8FF' : '#000', 
@@ -121,19 +122,21 @@ const ShopCategory = () => {
               <div className="d-flex flex-wrap justify-content-center">
                 {category.subcategories.map((subcategory) => (
                   <div key={subcategory.name} className="mx-2 my-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" >
-                    <h4 className="text-center fw-bold mt-4">{subcategory.name}</h4>
+                    
                     <Row className="justify-content-center">
                       {subcategory.toys.map((toy, index) => (
                         <Col key={index} xs={12}>
-                          <Card className="m-2 p-3  shadow border-0" style={{ width: '18rem', background: '#F0F8FF' }}>
+                          <Card className="m-2 p-3  shadow border-0" style={{ width: '18rem', background: '#6096BA' }}>
                             <Card.Img
                               variant="top"
                               src={toy.image}
                               alt={`Toy ${index + 1}`}
                               style={{ height: '200px' }}
                             />
-                            <Card.Body className="d-flex flex-column justify-content-between">
+                            <Card.Body className="d-flex flex-column justify-content-between text-light">
                               <div>
+                            
+                              <Card.Text>{subcategory.name}</Card.Text>
                                 <Card.Text>Price: ${toy.price}</Card.Text>
                                 <span className="rating">
                                   {[...Array(5)].map((_, ratingIndex) => (
@@ -152,7 +155,7 @@ const ShopCategory = () => {
                             <div>
                               <Button
                                 variant="light"
-                                className="rounded-5 text-light"
+                                className="rounded-5 text-light border-0"
                                 style={{ backgroundColor: '#FF5722' }}
                                 onClick={() => handleModal(toy)}
                               >
