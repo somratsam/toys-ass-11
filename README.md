@@ -17,4 +17,4 @@
 - Create dynamic route
 - Create loading spinner
 - Use Aos package for home page
-- Live site link: 
+- Live site link: https://toys-marketplace-e1c65.web.app
